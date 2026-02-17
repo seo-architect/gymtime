@@ -1,0 +1,159 @@
+:root {
+  color-scheme: light;
+  --bg: #0f172a;
+  --card: #111827;
+  --text: #f9fafb;
+  --muted: #cbd5e1;
+  --accent: #f59e0b;
+  --border: #1f2937;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #1e293b 0%, var(--bg) 60%);
+  color: var(--text);
+}
+
+body {
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.app {
+  width: min(100%, 32rem);
+  display: grid;
+  gap: 1rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 8vw, 3rem);
+  line-height: 1;
+}
+
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.all-toggle {
+  justify-self: end;
+}
+
+.hero p {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.clock {
+  margin: 0.5rem 0 0;
+  color: var(--text);
+  font-size: clamp(1.8rem, 10vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.unlock {
+  border: 0;
+  border-radius: 0.9rem;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: var(--accent);
+  color: #111827;
+}
+
+.unlock.ready {
+  background: #10b981;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.control {
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  background: color-mix(in srgb, var(--card), black 8%);
+}
+
+.control:disabled {
+  opacity: 0.5;
+}
+
+.timers {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.timer {
+  background: color-mix(in srgb, var(--card), black 8%);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 0.9rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.timer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.timer h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.01em;
+}
+
+.remaining {
+  margin: 0;
+  font-size: clamp(2rem, 11vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.toggle input {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+@media (min-width: 700px) {
+  .app {
+    width: min(96vw, 52rem);
+  }
+
+  .timers {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
